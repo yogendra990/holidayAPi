@@ -8,13 +8,26 @@ import { HolidayApiService } from '../holidayApi-Service/holiday-api-service';
   styleUrls: ['./holiday-api-home.component.css']
 })
 export class HolidayApiHomeComponent implements OnInit {
-  HolidayData :any;
+  HolidayData :any;  
+  months:any= ['Select a  Month',1,2,3,4,5,6,7,8,9,10,11,12];
+  MonthValue: any = this.months[0];
   constructor(private HolidayApi :HolidayApiService) { }
-
+  state:any;
+  states = [
+    { name: 'Arizona', abbrev: 'AZ' },
+    { name: 'California', abbrev: 'CA' },
+    { name: 'Colorado', abbrev: 'CO' },
+    { name: 'New York', abbrev: 'NY' },
+    { name: 'Pennsylvania', abbrev: 'PA' },
+  ];
+  OnChange(Month){
+    this.MonthValue = Month;
+  }
   onholiday(){
-    this.HolidayApi.onHolidayCall('US',2016)
+    this.HolidayApi.onHolidayCall(this.MonthValue)
     .subscribe((data)=>{
       setTimeout(()=>{
+        console.log(this.MonthValue);
       this.HolidayData = data.holidays;
        console.log(this.HolidayData);
       },2000);

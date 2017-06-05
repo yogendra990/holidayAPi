@@ -1,11 +1,26 @@
+<div class="jumbotron">
 <div class="row">
+  <div class="container container-fluid">
 <div class="col-md-4">
-  <h6>Get Holiday Api</h6>
-  <button class="btn btn-primary" (click)="onholiday()"> Get Holiday List </button>
+  <h6>Get Holiday Api</h6>  
+</div>
 </div>
 </div>
 <div class="row">
   <div class="col-md-5">
-    <span *ngFor="let holiday of HolidayData; let i = index; trackBy: trackByFn">{{holiday.name}}</span>
+    <div class="col-md-12">
+      <select  class="form-control" [ngModel]="MonthValue" (ngModelChange)="OnChange($event)">
+        <option *ngFor="let month of months" [ngValue]="month"> {{month}}</option>
+      </select>
+      <button class="btn btn-primary" (click)="onholiday()"> Get Holiday List </button>
   </div>
+</div>
+</div>
+<div class="list-group">
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let holiday of HolidayData">
+     <a href="#" (click)="OnholidayInf()"> {{holiday.name}}</a>
+    </li>
+  </ul>
+</div>
 </div>

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {HttpModule} from '@angular/http';
+import { FormsModule } from '@angular/forms';
 
 //Importing Browser Animations for running animations for angular-material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -29,7 +30,8 @@ import { AppRouteConfig } from './app-route-config';
     MdButtonModule,
     MdCheckboxModule,
     AppRouteConfig,
-    HttpModule
+    HttpModule,
+    FormsModule
   ],
   providers: [HolidayApiService],
   bootstrap: [AppComponent]
