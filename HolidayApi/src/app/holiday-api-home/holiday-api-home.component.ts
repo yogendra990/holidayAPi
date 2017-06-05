@@ -11,15 +11,7 @@ export class HolidayApiHomeComponent implements OnInit {
   HolidayData :any;  
   months:any= ['Select a  Month',1,2,3,4,5,6,7,8,9,10,11,12];
   MonthValue: any = this.months[0];
-  constructor(private HolidayApi :HolidayApiService) { }
-  state:any;
-  states = [
-    { name: 'Arizona', abbrev: 'AZ' },
-    { name: 'California', abbrev: 'CA' },
-    { name: 'Colorado', abbrev: 'CO' },
-    { name: 'New York', abbrev: 'NY' },
-    { name: 'Pennsylvania', abbrev: 'PA' },
-  ];
+  constructor(private HolidayApi :HolidayApiService) { }  
   OnChange(Month){
     this.MonthValue = Month;
     this.HolidayApi.onHolidayCall(this.MonthValue)
