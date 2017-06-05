@@ -22,18 +22,11 @@ export class HolidayApiHomeComponent implements OnInit {
   ];
   OnChange(Month){
     this.MonthValue = Month;
-  }
-  onholiday(){
     this.HolidayApi.onHolidayCall(this.MonthValue)
-    .subscribe((data)=>{
-      setTimeout(()=>{
-        console.log(this.MonthValue);
-      this.HolidayData = data.holidays;
-       console.log(this.HolidayData);
-      },2000);
-      console.log(data.holidays);
-    })
-  }
+      .subscribe((data) => {       
+          this.HolidayData = data.holidays;       
+      });
+  } 
   trackByFn(index, holiday){
    return holiday.name;
   }
