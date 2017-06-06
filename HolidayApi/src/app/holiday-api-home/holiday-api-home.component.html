@@ -1,16 +1,16 @@
 
     
-      <div>
+      <div class="my-content">
         <md-select [ngModel]="MonthValue" (ngModelChange)="OnChange($event)" style="width:100%;">
         <md-option *ngFor="let month of months" [value]="month"> {{month}}</md-option>
         </md-select>       
       </div>      
-  <div *ngIf="monthselected">    
+  <div class="my-content" *ngIf="monthselected">    
       <md-card  style="cursor:pointer;" *ngFor="let holiday of HolidayData">
         <a  (click)="OnholidayInfo(holiday)"> {{holiday.name}}</a>
       </md-card>    
   </div>
-  <div *ngIf="!monthselected">
+  <div class="my-content" *ngIf="!monthselected">
     <md-grid-list cols="1" >
       <md-grid-tile>Please select a Month from the list</md-grid-tile>      
     </md-grid-list>
