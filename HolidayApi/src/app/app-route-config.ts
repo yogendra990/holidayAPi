@@ -13,7 +13,7 @@ import { HolidayApiHomeComponent } from './holiday-api-home/holiday-api-home.com
 import { HolidayApiInfoComponent } from './holiday-api-info/holiday-api-info.component';
 
 const HolidayApiRouteConfig : Routes =[{path:'',component:HolidayApiHomeComponent},
-                                      {path:'HolidayApiInfo',component:HolidayApiInfoComponent}];
+                                      {path:'HolidayApiInfo/:Date/:name/:public',component:HolidayApiInfoComponent}];
 @NgModule({
     imports:[RouterModule.forRoot(HolidayApiRouteConfig)],
     exports:[RouterModule]
