@@ -9,12 +9,15 @@ import { HolidayApiService } from '../holidayApi-Service/holiday-api-service';
   styleUrls: ['./holiday-api-home.component.css']
 })
 export class HolidayApiHomeComponent implements OnInit {
-  HolidayData :any;  
-  months:any= ['Select a  Month',1,2,3,4,5,6,7,8,9,10,11,12];
+  HolidayData :any;
+  monthselected:boolean = false; 
+  months: any = ['Select a Month',1,2,3,4,5,6,7,8,9,10,11,12];
   MonthValue: any = this.months[0];
-  constructor(private HolidayApi :HolidayApiService, private HolidayInfoActiveRoute : ActivatedRoute, private HolidayInfoRoute : Router) { }  
+  constructor(private HolidayApi :HolidayApiService, private HolidayInfoActiveRoute : ActivatedRoute, private HolidayInfoRoute : Router) { }
+  
   OnChange(Month){
-    this.MonthValue = Month;
+    this.MonthValue = Month;       
+    this.monthselected = this.MonthValue === 'Select a Month'? false : true;
     this.HolidayApi.onHolidayCall(this.MonthValue)
       .subscribe((data) => {       
           this.HolidayData = data.holidays;

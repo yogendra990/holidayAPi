@@ -1,25 +1,18 @@
-<div class="jumbotron">
-<div class="row">
-  <div class="container container-fluid">
-<div class="col-md-4">
-  <h6>Get Holiday Api</h6>  
-</div>
-</div>
-</div>
-<div class="row">
-  <div class="col-md-5">
-    <div class="col-md-12">
-      <select  class="form-control" [ngModel]="MonthValue" (ngModelChange)="OnChange($event)">
-        <option *ngFor="let month of months" [ngValue]="month"> {{month}}</option>
-        </select>      
+
+    
+      <div>
+        <md-select [ngModel]="MonthValue" (ngModelChange)="OnChange($event)" style="width:100%;">
+        <md-option *ngFor="let month of months" [value]="month"> {{month}}</md-option>
+        </md-select>       
+      </div>      
+  <div *ngIf="monthselected">    
+      <md-card  style="cursor:pointer;" *ngFor="let holiday of HolidayData">
+        <a  (click)="OnholidayInfo(holiday)"> {{holiday.name}}</a>
+      </md-card>    
   </div>
-</div>
-</div>
-<div class="list-group">
-  <ul class="list-group">
-    <li class="list-group-item" *ngFor="let holiday of HolidayData">
-     <a id="HolidayRoutes" (click)="OnholidayInfo(holiday)"> {{holiday.name}}</a>
-    </li>
-  </ul>
-</div>
-</div>
+  <div *ngIf="!monthselected">
+    <md-grid-list cols="1" >
+      <md-grid-tile>Please select a Month from the list</md-grid-tile>      
+    </md-grid-list>
+  </div>
+  

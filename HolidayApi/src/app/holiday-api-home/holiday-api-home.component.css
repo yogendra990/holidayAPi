@@ -1,1 +1,12 @@
 #HolidayRoutes{ cursor: pointer};
+
+md-card{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: x-large;
+    font-style: oblique;
+    text-align: center !important;
+    cursor: pointer;
+}
+md-grid-tile {
+  background: lightcoral;
+}

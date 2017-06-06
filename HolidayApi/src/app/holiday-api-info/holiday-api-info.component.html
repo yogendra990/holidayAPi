@@ -1,11 +1,5 @@
-<div class="jumbotron">
-  <div class="row">
-    <div class="container container-fluid">
-      <div>
-        <ul class="list-group">
-          <li class="list-group-item"><label><strong>Holiday Name :</strong> </label>{{HolidayInfo.name}}</li>
-          <li class="list-group-item"><label> <strong>Date of the Holiday : </strong>  </label>{{HolidayInfo.date | date:'fullDate'}}</li>
-          <li class="list-group-item"><label> <strong> {{HolidayInfo.Public}} </strong> </label> </li>
-        </ul>
-      </div>
-    </div>
+
+          <md-card><label><strong>Holiday Name :</strong> </label>&nbsp;{{HolidayInfo.name}}</md-card>
+          <md-card><label> <strong>Date of the Holiday : </strong></label>&nbsp;{{HolidayInfo.date | date:'fullDate'}}</md-card>
+          <md-card><label><strong>Holiday type :</strong></label>&nbsp; {{HolidayInfo.Public}} </md-card>
+      

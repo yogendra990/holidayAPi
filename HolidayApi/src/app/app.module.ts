@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 //Importing Browser Animations for running animations for angular-material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //Importing all the necessary components from @angular/material
-import { MdButtonModule, MdCheckboxModule } from '@angular/material';
+import { MdSidenavModule, MdToolbarModule, MdIconModule, MdTabsModule, MdCardModule, MdSelectModule, MdGridListModule} from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { HolidayApiHomeComponent } from './holiday-api-home/holiday-api-home.component';
@@ -27,8 +27,13 @@ import { AppRouteConfig } from './app-route-config';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MdButtonModule,
-    MdCheckboxModule,
+   MdSidenavModule,
+   MdToolbarModule,
+    MdTabsModule,
+   MdIconModule,
+    MdCardModule,
+    MdSelectModule,
+    MdGridListModule,
     AppRouteConfig,
     HttpModule,
     FormsModule
